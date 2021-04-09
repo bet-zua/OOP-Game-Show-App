@@ -13,7 +13,8 @@
       addPhraseToDisplay(){
         const phraseSection = document.getElementById('phrase');
         const phraseArr = this.phrase.split(' ');
-        // Creates a list of letters, with spaces between each word
+
+        // Creates letters placeholders with spaces between each word
         let html = `<ul>`;
         phraseArr.forEach( word => {
             for (let i = 0; i < word.length; i += 1){
