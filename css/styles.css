@@ -30,7 +30,7 @@ body {
   height: 100vh;
 
    /* The image used */
-   background-image: url("/images/bg.png");
+   background-image: url("../images/bg.png");
 
  
    /* Center and scale the image nicely */

@@ -9,11 +9,11 @@
      constructor(){
         this.missed = 0;
         this.phrases = [
-            'Head in the clouds',
-            'Out of the blue',
-            'Piece of cake',
-            'Cool as a cucumber',
-            'Hold your horses'];
+            new Phrase('Head in the clouds'),
+            new Phrase ('Out of the blue'),
+            new Phrase('Piece of cake'),
+            new Phrase('Cool as a cucumber'),
+            new Phrase('Hold your horses')];
         this.activePhrase = null;
         this.endGame = false;
      }
@@ -33,7 +33,7 @@
 
      getRandomPhrase(){
          const randomNumber = Math.floor(Math.random() * 5);
-         const newPhrase = new Phrase(this.phrases[randomNumber])
+         const newPhrase = this.phrases[randomNumber];
          return newPhrase;
      }
 
