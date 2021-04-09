@@ -7,13 +7,13 @@
  * and keyboard presses */
 
 let game;
-
+// Creates a new Game object when start button is clicked
 const startButton = document.getElementById('btn__reset');
 startButton.addEventListener('click', (e)=>{
     game = new Game();
     game.startGame();
 });
-
+// Handles onscreen keyboard button clicks
 const keys = document.getElementById('qwerty');
 keys.addEventListener('click', (e) => {
     if(e.target.tagName == 'BUTTON'){

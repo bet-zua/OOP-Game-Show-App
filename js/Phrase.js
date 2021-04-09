@@ -9,11 +9,11 @@
         this.phrase = phrase.toLowerCase();
       }
 
-      //add letter placeholders to the display when game starts
+      // Adds letter placeholders to the display when game starts
       addPhraseToDisplay(){
         const phraseSection = document.getElementById('phrase');
         const phraseArr = this.phrase.split(' ');
-        //create a list of letters, with spaces between each word
+        // Creates a list of letters, with spaces between each word
         let html = `<ul>`;
         phraseArr.forEach( word => {
             for (let i = 0; i < word.length; i += 1){
@@ -28,12 +28,12 @@
         phraseSection.innerHTML = html;
       }
 
-      //checks whether the letter selected by the player matches a letter in the phrase
+      // Checks whether the letter selected by the player matches a letter in the phrase
       checkLetter(letter){
         return this.phrase.includes(letter);
       }
       
-      //reveals the letter(s) on the board that matches the player's selection
+      // Reveals the letter(s) on the board that matches the player's selection
       showMatchedLetter(letter){
         const matchingLetters = Array.from(document.getElementsByClassName(letter));
         matchingLetters.forEach(match => {

@@ -26,7 +26,7 @@
          this.activePhrase = this.getRandomPhrase();
          this.activePhrase.addPhraseToDisplay();
 
-        // clean up overlay from possible previous game
+        // Cleans up overlay from possible previous game
          overlay.classList.remove('win');
          overlay.classList.remove('lose');
      }
@@ -40,17 +40,21 @@
     /* Disables selected letter, changes it's button color and either
      * reveals matching letter(s) or removes a life. */
      handleInteraction(keyClicked){
-        if(this.endGame){return false;}//avoid logging intections after game ends
+        // Avoids logging intections after game ends
+        if(this.endGame){return false;}
+
+        // Disables selected letter's onscreen button
         keyClicked.disabled = true;
         const selectedLetter = keyClicked.textContent;
-        // Correct guess
+
+        // Handles correct & incorrect guess
         if(this.activePhrase.checkLetter(selectedLetter)){
             keyClicked.classList.add('chosen');
             this.activePhrase.showMatchedLetter(selectedLetter);
             if (this.checkForWin()){
                 this.gameOver();
             }
-        } else { // Incorrect guess
+        } else { 
             keyClicked.classList.add('wrong');
             this.removeLife();
         }
@@ -62,7 +66,6 @@
          heart.src = 'images/lostHeart.png';
 
          this.missed += 1;
-
          if (this.missed >= 5){
              this.gameOver();
          }
@@ -83,11 +86,10 @@
 
      // Displays game-over screen with a win/loss message and resets the gameboard
      gameOver(){
+        // Shows overlay and displays a message
         const overlay = document.getElementById('overlay');
         overlay.style.display = '';
-
         const endMessage = document.getElementById('game-over-message');
-
         if(this.checkForWin()){
             endMessage.innerHTML = '🎉 You won! Well done! 🎉';
             overlay.classList.remove('start');
@@ -98,7 +100,7 @@
             overlay.classList.add('lose');
         }
 
-        //resets  the gameboard
+        // Resets  the gameboard
         const phraseSection = document.getElementById('phrase');
         phraseSection.innerHTML = '<ul></ul>';
         const keys = Array.from(document.getElementsByClassName('key'));
