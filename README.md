@@ -1,5 +1,5 @@
 # OOP-Game-Show-App
-A browser-based, word guessing game: "Guess the Idiom" written in pure vanilla JS.
+A browser-based, word guessing game: "Guess the Idiom" written in pure vanilla JS using OOP.
 
 After clicking 'Start Game' button, an idiom is selected at random.
 The idiom is unknown to the player but a corresponding number of letters and spaces appear on the screen.
